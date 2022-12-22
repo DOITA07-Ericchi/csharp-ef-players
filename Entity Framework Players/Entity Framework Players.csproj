@@ -12,6 +12,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Utility\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.1">
@@ -22,5 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utility\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>

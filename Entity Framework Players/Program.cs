@@ -28,4 +28,12 @@ using (PlayersContext pcDb = new PlayersContext ()) {
 	Player Cybertron = new Player { nome = "Aaron", cognome = "Zheng", nPartiteGiocate = GeneraPartite.GeneraNumero () [0], nPartiteVinte = GeneraPartite.GeneraNumero () [1] };
 	Player Alexis = new Player { nome = "Francesco", cognome = "Pardini", nPartiteGiocate = GeneraPartite.GeneraNumero () [0], nPartiteVinte = GeneraPartite.GeneraNumero () [1] };
 	Team VGC = new Team { nome = "VGC", città = "Altopiano Blu", allenatore = "Alisma", colori = "RossoBianco"};
+	pcDb.Add(Wolfey);
+	pcDb.Add(Cybertron);
+	pcDb.Add(Alexis);
+	pcDb.SaveChanges();
+	VGC.giocatori.Add(Wolfey);
+	VGC.giocatori.Add(Cybertron);
+	VGC.giocatori.Add(Alexis);
+	pcDb.SaveChanges();
 }
