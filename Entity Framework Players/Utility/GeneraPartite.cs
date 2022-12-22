@@ -15,11 +15,6 @@ namespace Entity_Framework_Players {
 			return partiteGiocate;
 		}
 
-		public static int GeneraVinte (int partiteGiocate) {
-			Random random = new Random ();
-			
-			return partiteVinte;
-		}
 		public GeneraPartite () {
 		}
 	}

@@ -4,18 +4,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entity_Framework_Players {
-	// Milestone 0
-	[Table ("player")]
-	[Index (nameof (id), IsUnique = true)]
-	public class Player {
+	// Milestone 2
+	[Table ("team")]
+	[Index (nameof (teamId), IsUnique = true)]
+	public class Team {
 		[Key]
-		public int id { get; set; }
+		public int teamId { get; set; }
 		[Required]
 		public string nome { get; set; }
-		public string cognome { get; set; }
-		public int punteggio { get; set; }
-		public int nPartiteGiocate { get; set; }
-		public int nPartiteVinte { get; set; }
+		public string città { get; set; }
+		public string allenatore { get; set; }
+		public string colori { get; set; }
+
+		public List<Player> giocatori { get; set; }
 	}
 }
 
