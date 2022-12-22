@@ -31,6 +31,7 @@ using (PlayersContext pcDb = new PlayersContext ()) {
 	pcDb.Add(Wolfey);
 	pcDb.Add(Cybertron);
 	pcDb.Add(Alexis);
+	pcDb.Add(VGC);
 	pcDb.SaveChanges();
 	VGC.giocatori.Add(Wolfey);
 	VGC.giocatori.Add(Cybertron);
