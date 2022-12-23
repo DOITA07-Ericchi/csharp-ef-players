@@ -1,40 +1,32 @@
 ﻿using Entity_Framework_Players;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-
-Console.WriteLine ("MAIN!!!!!!");
-
-
 using (PlayersContext pcDb = new PlayersContext ()) {
 	// Milestone 1.1
 	int punteggio = GeneraPartite.GeneraPunteggio ();
 	int [] partiteGiocate = GeneraPartite.GeneraNumero ();
 
-	Player marcofiero = new Player { nome = "Marcu", cognome = "Fiero", nPartiteGiocate = GeneraPartite.GeneraNumero () [0], nPartiteVinte = GeneraPartite.GeneraNumero () [1] };
+	Player marcofiero = new Player { Nome = "Marcu", Cognome = "Fiero", NPartiteGiocate = GeneraPartite.GeneraNumero () [0], NPartiteVinte = GeneraPartite.GeneraNumero () [1] };
 
 	pcDb.Add (marcofiero);
 
 	// Milestone 1.2
-	Console.WriteLine ("Inserito: " + marcofiero.nome + " " + marcofiero.cognome);
+	Console.WriteLine ("Inserito: " + marcofiero.Nome + " " + marcofiero.Cognome);
 
 	// Milestone 1.3
-	marcofiero.nome = "Marco";
-	marcofiero.cognome = "Silva";
+	marcofiero.Nome = "Marco";
+	marcofiero.Cognome = "Silva";
 
 	// Milestone 1.4
 	pcDb.Remove (marcofiero);
 
 	// Milestone 3
-	Player Wolfey = new Player { nome = "Wolfe", cognome = "Glick", nPartiteGiocate = GeneraPartite.GeneraNumero () [0], nPartiteVinte = GeneraPartite.GeneraNumero () [1] };
-	Player Cybertron = new Player { nome = "Aaron", cognome = "Zheng", nPartiteGiocate = GeneraPartite.GeneraNumero () [0], nPartiteVinte = GeneraPartite.GeneraNumero () [1] };
-	Player Alexis = new Player { nome = "Francesco", cognome = "Pardini", nPartiteGiocate = GeneraPartite.GeneraNumero () [0], nPartiteVinte = GeneraPartite.GeneraNumero () [1] };
-	Team VGC = new Team { nome = "VGC", città = "Altopiano Blu", allenatore = "Alisma", colori = "RossoBianco"};
-	pcDb.Add(Wolfey);
-	pcDb.Add(Cybertron);
-	pcDb.Add(Alexis);
+	Player Wolfey = new Player { Nome = "Wolfe", Cognome = "Glick", NPartiteGiocate = GeneraPartite.GeneraNumero () [0], NPartiteVinte = GeneraPartite.GeneraNumero () [1] };
+	Player Cybertron = new Player { Nome = "Aaron", Cognome = "Zheng", NPartiteGiocate = GeneraPartite.GeneraNumero () [0], NPartiteVinte = GeneraPartite.GeneraNumero () [1] };
+	Player Alexis = new Player { Nome = "Francesco", Cognome = "Pardini", NPartiteGiocate = GeneraPartite.GeneraNumero () [0], NPartiteVinte = GeneraPartite.GeneraNumero () [1] };
+	Team VGC = new Team { Nome = "VGC", Città = "Altopiano Blu", Allenatore = "Alisma", Colori = "RossoBianco", Giocatori = new List<Player>() };
 	pcDb.Add(VGC);
-	pcDb.SaveChanges();
-	VGC.giocatori.Add(Wolfey);
-	VGC.giocatori.Add(Cybertron);
-	VGC.giocatori.Add(Alexis);
+	VGC.Giocatori.Add(Wolfey);
+	VGC.Giocatori.Add(Cybertron);
+	VGC.Giocatori.Add(Alexis);
 	pcDb.SaveChanges();
 }

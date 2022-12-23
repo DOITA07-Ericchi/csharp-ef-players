@@ -6,17 +6,17 @@ using Microsoft.EntityFrameworkCore;
 namespace Entity_Framework_Players {
 	// Milestone 2
 	[Table ("team")]
-	[Index (nameof (teamId), IsUnique = true)]
+	[Index (nameof (TeamId), IsUnique = true)]
 	public class Team {
 		[Key]
-		public int teamId { get; set; }
+		public int TeamId { get; set; }
 		[Required]
-		public string nome { get; set; }
-		public string città { get; set; }
-		public string allenatore { get; set; }
-		public string colori { get; set; }
+		public string Nome { get; set; }
+		public string Città { get; set; }
+		public string Allenatore { get; set; }
+		public string Colori { get; set; }
 
-		public List<Player> giocatori { get; set; }
+		public List<Player> Giocatori { get; set; }
 	}
 }
 

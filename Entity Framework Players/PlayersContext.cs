@@ -7,7 +7,7 @@ namespace Entity_Framework_Players {
 		public DbSet<Team> Teams { get; set; }
 
 		protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder) {
-			optionsBuilder.UseSqlServer ("Data Source=localhost;Database=Players;User Id=SA;Password=nekonekonyaa9021;TrustServerCertificate=True");
+			optionsBuilder.UseSqlServer ("Data Source=localhost;Database=Players;Integrated Security=True;TrustServerCertificate=True");
 		}
 	}
 }

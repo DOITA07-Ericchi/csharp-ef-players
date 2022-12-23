@@ -23,69 +23,69 @@ namespace EntityFrameworkPlayers.Migrations
 
             modelBuilder.Entity("Entity_Framework_Players.Player", b =>
                 {
-                    b.Property<int>("playerId")
+                    b.Property<int>("PlayerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("playerId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PlayerId"));
 
-                    b.Property<string>("cognome")
+                    b.Property<string>("Cognome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("nPartiteGiocate")
+                    b.Property<int>("NPartiteGiocate")
                         .HasColumnType("int");
 
-                    b.Property<int>("nPartiteVinte")
+                    b.Property<int>("NPartiteVinte")
                         .HasColumnType("int");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("punteggio")
+                    b.Property<int>("Punteggio")
                         .HasColumnType("int");
 
-                    b.Property<int>("teamId")
+                    b.Property<int>("TeamId")
                         .HasColumnType("int");
 
-                    b.HasKey("playerId");
+                    b.HasKey("PlayerId");
 
-                    b.HasIndex("playerId")
+                    b.HasIndex("PlayerId")
                         .IsUnique();
 
-                    b.HasIndex("teamId");
+                    b.HasIndex("TeamId");
 
                     b.ToTable("player");
                 });
 
             modelBuilder.Entity("Entity_Framework_Players.Team", b =>
                 {
-                    b.Property<int>("teamId")
+                    b.Property<int>("TeamId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("teamId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeamId"));
 
-                    b.Property<string>("allenatore")
+                    b.Property<string>("Allenatore")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("città")
+                    b.Property<string>("Città")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("colori")
+                    b.Property<string>("Colori")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("teamId");
+                    b.HasKey("TeamId");
 
-                    b.HasIndex("teamId")
+                    b.HasIndex("TeamId")
                         .IsUnique();
 
                     b.ToTable("team");
@@ -93,18 +93,18 @@ namespace EntityFrameworkPlayers.Migrations
 
             modelBuilder.Entity("Entity_Framework_Players.Player", b =>
                 {
-                    b.HasOne("Entity_Framework_Players.Team", "team")
-                        .WithMany("giocatori")
-                        .HasForeignKey("teamId")
+                    b.HasOne("Entity_Framework_Players.Team", "Team")
+                        .WithMany("Giocatori")
+                        .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("team");
+                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("Entity_Framework_Players.Team", b =>
                 {
-                    b.Navigation("giocatori");
+                    b.Navigation("Giocatori");
                 });
 #pragma warning restore 612, 618
         }

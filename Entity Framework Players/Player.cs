@@ -6,19 +6,19 @@ using Microsoft.EntityFrameworkCore;
 namespace Entity_Framework_Players {
 	// Milestone 0
 	[Table ("player")]
-	[Index (nameof (playerId), IsUnique = true)]
+	[Index (nameof (PlayerId), IsUnique = true)]
 	public class Player {
 		[Key]
-		public int playerId { get; set; }
+		public int PlayerId { get; set; }
 		[Required]
-		public string nome { get; set; }
-		public string cognome { get; set; }
-		public int punteggio { get; set; }
-		public int nPartiteGiocate { get; set; }
-		public int nPartiteVinte { get; set; }
+		public string Nome { get; set; }
+		public string Cognome { get; set; }
+		public int Punteggio { get; set; }
+		public int NPartiteGiocate { get; set; }
+		public int NPartiteVinte { get; set; }
 
 		// Milestone 2
-		public int teamId { get; set; }
-		public Team team { get; set; }
+		public int TeamId { get; set; }
+		public Team Team { get; set; }
 	}
 }
